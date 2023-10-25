@@ -1,0 +1,143 @@
+.app__overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+}
+  
+.app__overlay_visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu {
+  box-sizing: border-box;
+  width: 520px;
+  height: 100vh;
+  background-color: #202020;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+  }
+}
+
+.menu__close {
+  background-image: url('../../images/menu-close.svg');
+  border: none;
+  height: 30px;
+  width: 30px;
+  background-color: inherit;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 23px;
+  right: 23px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu__close {
+    top: 14px;
+    right: 14px;
+  }
+}
+
+.menu__close:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}
+
+.menu__navigator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  margin-top: 159px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu__navigator {
+    margin-top: 144px;
+  }
+}
+
+.menu__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0;
+  align-items: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .menu__links {
+    gap: 24px;
+  }
+}
+
+.menu__link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.menu__link:active {
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 4px;
+}
+
+.menu__link_active {
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 4px;
+}
+
+.menu__link:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}
+
+.menu__account-button {
+  background-color: #313131;
+  border-radius: 20px;
+  width: 100px;
+  height: 32px;
+  border: none;
+  margin-bottom: 90px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu__account-button {
+    margin-bottom: 46px;
+  }
+}
+
+.menu__account {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu__account:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}

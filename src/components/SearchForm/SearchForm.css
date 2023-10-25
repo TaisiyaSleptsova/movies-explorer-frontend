@@ -1,0 +1,77 @@
+.search-form {
+  padding-top: 80px;
+  padding-bottom: 29px;
+  border-bottom: 1px solid #424242;
+  margin: 0 auto;
+  max-width: calc(100% - 140px);
+}
+
+@media screen and (max-width: 900px) {
+  .search-form {
+    max-width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-form {
+    max-width: calc(100% - 28px);
+  }
+}
+
+.search-form__container {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto 14px;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .search-form__container {
+    margin-bottom: 29px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-form__container {
+    margin-bottom: 35px;
+  }
+}
+
+.search-form__imput {
+  background-color: #2F2F2F;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  border-radius: 8px;
+  border: none;
+  color: #8B8B8B;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+  .search-form__imput {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 13px;
+  }
+}
+
+.search-form__button {
+  background-image: url("../../images/button-fiend.svg");
+  height: 44px;
+  min-width: 44px;
+  border: none;
+  background-position: center;
+  border-radius: 8px;
+  padding: 0;
+  background-color: #202020;
+  cursor: pointer;
+}
+
+.search-form__button:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}

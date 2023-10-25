@@ -1,0 +1,135 @@
+.header {
+  max-width: calc(100% - 140px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  min-height: 74px;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    max-width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    max-width: calc(100% - 28px);
+  }
+}
+
+.header__menu {
+  display: none;
+  gap: 30px;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .header__menu {
+    gap: 14px;
+  }
+}
+
+.header__menu_opened {
+  display: flex;
+}
+
+.header__menu-button {
+  display: none;
+}
+
+.header__menu-button:hover {
+  opacity: 80%;
+  transition: 1s ease-out;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu-button {
+    width: 28px;
+    height: 23px;
+    display: block;
+    border: none;
+    padding: 0;
+    border-bottom: 3px solid #FFFFFF;
+    border-top: 3px solid #FFFFFF;
+    background-image: url(../../images/header-menu.svg);
+    background-size: 28px 3px;
+    background-position: center;
+    background-color: initial;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__menu-button {
+    width: 22px;
+    background-size: 22px 3px;
+  }
+}
+
+.header__singup {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .header__singup {
+    font-size: 10px;
+  }
+}
+
+.header__singup:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}
+
+.header__singin-button {
+  background-color: #3DDC84;
+  border: none;
+  border-radius: 3px;
+  width: 76px;
+  height: 32px;
+  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .header__singin-button {
+    width: 54px;
+    height: 26px;
+  }
+}
+
+.header__singin {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .header__singin {
+    font-size: 10px;
+  }
+}
+
+.header__singin:hover {
+  opacity: 70%;
+  transition: 1s ease-out;
+}
+
+
+/* @media screen and (max-width: 900px) {
+  .header {
+    max-width: 320px;
+    padding-top: 28px;
+  }
+} */
