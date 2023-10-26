@@ -5,7 +5,7 @@ export default function HeaderMenu ({ isOpen, onClose}) {
 
   const setActive = ({ isActive }) =>(isActive ? "menu__link menu__link_active" : "menu__link");
   return (
-    <div className={`app__overlay ${isOpen ? "app__overlay_visible" : ""}`}>
+    <div className={`page__overlay ${isOpen ? "page__overlay_visible" : ""}`}>
       <div className="menu">
         <button className="menu__close" onClick={onClose}></button>
         <nav className="menu__navigator">

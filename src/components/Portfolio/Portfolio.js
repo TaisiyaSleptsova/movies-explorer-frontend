@@ -4,11 +4,11 @@ import arrow from '../../images/pointer.svg';
 export default function Portfolio () {
   return (
     <dev className="portfolio">
-      <h3 className="portfolio__title">Портфолио</h3>
+      <h4 className="portfolio__title">Портфолио</h4>
       <ul className="portfolio__items">
         <li className="portfolio__item">
-          <p className="portfolio__name">Статичный сайт</p>
           <a className="portfolio__link" href="https://github.com/TaisiyaSleptsova/how-to-learn" target="_blank"rel="noreferrer" >
+            <p className="portfolio__name">Статичный сайт</p>
             <img
               className="portfolio__pointer"
               src={arrow}
@@ -17,8 +17,8 @@ export default function Portfolio () {
           </a>
         </li>
         <li className="portfolio__item">
-          <p className="portfolio__name">Адаптивный сайт</p>
           <a className="portfolio__link" href="https://taisiyasleptsova.github.io/mesto/" target="_blank" rel="noreferrer" >
+            <p className="portfolio__name">Адаптивный сайт</p>          
             <img
               className="portfolio__pointer"
               src={arrow}
@@ -27,8 +27,8 @@ export default function Portfolio () {
           </a>
         </li>
         <li className="portfolio__item">
-          <p className="portfolio__name">Одностраничное приложение</p>
           <a className="portfolio__link" href="https://taisiyasleptsova.github.io/russian-travel/" target="_blank" rel="noreferrer" >
+            <p className="portfolio__name">Одностраничное приложение</p>          
             <img
               className="portfolio__pointer"
               src={arrow}

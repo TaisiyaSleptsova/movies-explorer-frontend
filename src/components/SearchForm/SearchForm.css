@@ -18,6 +18,13 @@
   }
 }
 
+.search-form__form {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .search-form__container {
   display: flex;
   gap: 10px;

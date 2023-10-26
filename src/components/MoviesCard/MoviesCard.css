@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1220px) {
+  .movie__list {
+    max-width: 339px;
+    margin: 0 auto;
+  }
+}
+
 .movie__container {
   display: flex;
   min-width: calc(100% - 28px);
