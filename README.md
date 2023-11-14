@@ -3,11 +3,19 @@ ____________
 **Проект представляет собой многостраничный сайт.**
 _______
 ## Информация по проекту:
+Работа создана в рамках учебы в Яндекс.Практикум на курсе "Веб-разработчик".
 Верстка сайта осуществлена по макету: dark-2.
+Ссылка на макет: 
+https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82?type=design&node-id=1-7732&mode=design&t=TOfYeTqOieUsZoSY-0
 
-Создана в рамках учебы в Яндекс.Практикум на курсе "Веб-разработчик".
-Ссылка на сайт размещенный на сервере: https://movies.tasyushka.nomoredomainsrocks.ru/
-Ссылка на репозиторий: https://github.com/TaisiyaSleptsova/movies-explorer-frontend
+Ссылка на сайт размещенный на сервере: 
+https://movies.tasyushka.nomoredomainsrocks.ru/
+
+Ссылка на пул реквест: 
+https://github.com/TaisiyaSleptsova/movies-explorer-frontend/pull/2
+
+Ссылка на репозиторий: 
+https://github.com/TaisiyaSleptsova/movies-explorer-frontend
 ____________
 ## Описание:
 
