@@ -23,6 +23,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-direction: column;
 }
 
 .search-form__container {
@@ -42,6 +43,13 @@
   .search-form__container {
     margin-bottom: 35px;
   }
+}
+
+.search-form__form-container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
 }
 
 .search-form__imput {
@@ -64,6 +72,14 @@
     padding-bottom: 13px;
     padding-left: 13px;
   }
+}
+
+.search-form__error {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12.1px;
+  color: #EE3465;
+  margin-top: 10px;
 }
 
 .search-form__button {

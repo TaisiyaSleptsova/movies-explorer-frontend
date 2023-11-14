@@ -46,7 +46,10 @@
   font-weight: 400;
   color: #4285F4;
   text-decoration: none;
-  margin-top: 184px;  
+  margin-top: 184px; 
+  border: none;
+  background-color: inherit;
+  cursor: pointer; 
 }
 
 @media screen and (max-width: 600px) {
