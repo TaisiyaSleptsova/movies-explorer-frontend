@@ -9,5 +9,4 @@ const InitMinWidth = 5
 const StepMaxWidth = 3
 const StepMiddleWidth = 2
 
-
 export { baseUrl, MaxWidth, MiddleWidth, MinWidth, InitMaxWidth, InitMiddleWidth, InitMinWidth, StepMaxWidth, StepMiddleWidth }

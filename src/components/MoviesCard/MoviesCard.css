@@ -123,6 +123,7 @@
   .movie__save {
     margin-top: 10px;
     margin-left: 206px;
+    visibility: visible;
   }
 }
 
@@ -187,7 +188,7 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  visibility: visible;
+  visibility: hidden;
   opacity: 1;
   /* display: block; */
 }
@@ -202,6 +203,7 @@
   .movie__delete {
     margin-left: 256px;
     margin-top: 10px;
+    visibility: visible;
   }
 }
 
@@ -215,7 +217,7 @@
   opacity: 1;
 }
 
-.movie__img:hover~.movie__delete {
+.movie__link:hover~.movie__delete {
   visibility: visible;
   opacity: 1;
 }

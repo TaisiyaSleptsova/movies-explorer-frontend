@@ -1,60 +1,12 @@
-import { useEffect, useState } from 'react'
 import MoviesCard from '../MoviesCard/MoviesCard'
 import mainApi from '../utils/MainApi'
 import './MoviesCardList.css'
-import { InitMaxWidth, InitMiddleWidth, InitMinWidth, MaxWidth, MiddleWidth, MinWidth, StepMaxWidth, StepMiddleWidth } from '../utils/Constants'
 import { useLocation } from 'react-router-dom'
 import Preloader from '../Preloader/Preloader'
 
-export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, setIsLike, onSave, savedMovies, onFavorite, setSavedMovies, newMoviasList, errorMessage }) {
-
-  const [count, setCount] = useState('')
-  const movieCards = movies.slice(0, count)
+export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, setIsLike, onSave, savedMovies, onFavorite, setSavedMovies, newMoviasList, errorMessage, firstEmpty, movieCards, count, handleMore }) {
 
   const location = useLocation()
-
-  function showCards() {
-    const counter = { init: InitMaxWidth, step: StepMaxWidth}
-    if (window.innerWidth < MaxWidth) {
-      counter.init = InitMaxWidth
-      counter.step = StepMaxWidth
-    }
-    if (window.innerWidth < MiddleWidth) {
-      counter.init = InitMiddleWidth
-      counter.step = StepMiddleWidth
-    }
-    if (window.innerWidth < MinWidth) {
-      counter.init = InitMinWidth
-      counter.step = StepMiddleWidth
-    }
-    return counter
-  }
-
-  useEffect(() => {
-    if (location.pathname === '/movies') {
-      setCount(showCards().init)
-      function displayCardsBasedOnWidth() {
-        if (window.innerWidth >= MaxWidth) {
-          setCount(showCards().init)
-        }
-        if (window.innerWidth < MaxWidth) {
-          setCount(showCards().init)
-        }
-        if (window.innerWidth < MiddleWidth) {
-          setCount(showCards().init)
-        }
-        if (window.innerWidth < MinWidth) {
-          setCount(showCards().init)
-        }
-      }
-      window.addEventListener('resize', displayCardsBasedOnWidth)
-      return () => window.removeEventListener('resize', displayCardsBasedOnWidth)
-    }
-  },[location.pathname])
-
-  function handleMore() {
-    setCount(count + showCards().step)
-  }
 
   function canselSave (data) {
       mainApi.deleteMovie (data._id, localStorage.jwt)
@@ -76,7 +28,7 @@ export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, 
     <section className="movies">
       <ul className="movies__items">
         {isLoading ? <Preloader/> :
-        (movieCards.length > 0 && location.pathname === '/movies') ?
+        (location.pathname === '/movies' && movieCards.length > 0) ?
         movieCards.map((item) => { 
             return (
               <MoviesCard 
@@ -109,7 +61,9 @@ export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, 
           }) :
         errorMessage ? 
         <p className="movies__error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p> :         
-        <p className="movies__error">Ничего не найдено</p>
+        !firstEmpty ?
+        <p className="movies__error">Ничего не найдено</p> :
+        ''
           }
       </ul>
        

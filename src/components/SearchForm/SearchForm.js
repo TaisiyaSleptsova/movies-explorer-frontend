@@ -1,31 +1,33 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useFormWithValidation from '../../hooks/useFormWithValidation';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 import './SearchForm.css'
 import { useLocation } from 'react-router-dom';
 
-
-
-export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, turnOnShort, savedMovies }) {
+export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, turnOnShort, savedMovies, getFirstState }) {
   const location = useLocation()
-  const { values, error, setError, handleChange, reset } = useFormWithValidation()
+  const { values, handleChange, reset } = useFormWithValidation()
+  const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(() => {
     if ((location.pathname === '/saved-movies' && savedMovies.length === 0)) {
       reset({search: ''})
-    } else {
+    } else {      
       reset({search: searchFormMovie})
     }
-    setError(false)
-  }, [searchFormMovie, reset, setError, location.pathname, savedMovies])
+  }, [searchFormMovie, reset, location.pathname, savedMovies])
 
   function handleSubmit (e) {
     e.preventDefault(); 
-    if (values.search) {
+    if (values.search && values.search !== " " && location.pathname === '/movies') {
       searchMovies(values.search)
-      setError(false)
+      setErrorMessage('')
+      getFirstState()
+    } else if (values.search && values.search !== " " && location.pathname === '/saved-movies'){
+      searchMovies(values.search)
+      setErrorMessage('')
     } else {
-      setError(true)
+      setErrorMessage('Нужно ввести ключевое слово')
     }
   }
 
@@ -40,7 +42,7 @@ export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, t
             placeholder="Фильм"
             type="text"
             required
-            value={values.search}
+            value={values.search || " "}
             onChange={handleChange}
           />
           <button
@@ -49,7 +51,7 @@ export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, t
             type="submit"
           />
           </div>
-          <span className="search-form__error">{error.search}</span>
+          <span className="search-form__error">{errorMessage}</span>
         </form>
       </div>
       <FilterCheckbox

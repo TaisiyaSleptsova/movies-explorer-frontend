@@ -13,8 +13,7 @@ export default function SavedMovies ({ savedMovies, loggedIn, onFavorite, newMov
   //переключение на короткометражные фильмы
   const [isFilter, setIsFilter] = useState(false)
 
-
-  //поиск фильмов и запиь состояния в локалСторадж
+  //поиск фильмов 
   const selection = useCallback((searchForm, isFilter, allMovies) => {
     setSearchFormMovie(searchForm)
     setFilterMovies(allMovies.filter((movie) => {
@@ -44,7 +43,7 @@ export default function SavedMovies ({ savedMovies, loggedIn, onFavorite, newMov
 
   return (
     loggedIn ? 
-    <main>
+    <main className="main">
       <SearchForm
       searchMovies={searchMovies}
       searchFormMovie={searchFormMovie}
