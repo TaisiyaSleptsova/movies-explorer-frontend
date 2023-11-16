@@ -39,3 +39,22 @@
     margin: 0 auto;
   }
 }
+
+.movies__error {
+  max-width: 100%;
+  text-align: center;
+  margin: 200px auto;
+  grid-column-start: 2;
+}
+
+@media screen and (max-width: 1220px) {
+  .movies__error {
+    grid-column: 1 / span 2;;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .movies__error {
+    grid-column-start: 1;
+  }
+}

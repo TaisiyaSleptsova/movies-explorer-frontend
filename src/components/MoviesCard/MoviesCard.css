@@ -33,8 +33,22 @@
   }
 }
 
-.movie__img {
+.movie__link {
+  z-index: 0;
   cursor: pointer;
+}
+
+.movie__link:hover .movie__save{
+  opacity: 70%; 
+  visibility: visible;
+  z-index: 2;
+  display: block;
+}
+
+.movie__img {
+  width: 360px;
+  height: 190px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 900px) {
@@ -94,7 +108,7 @@
   line-height: 9px;
   padding: 0;
   visibility: hidden;
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -109,12 +123,15 @@
   .movie__save {
     margin-top: 10px;
     margin-left: 206px;
+    visibility: visible;
   }
 }
 
 .movie__save:hover {
   opacity: 70%;
-  transition: 1s ease-out;
+ 
+  visibility: visible;
+ 
 }
 
 
@@ -133,6 +150,8 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  visibility: visible;
+  opacity: 1;
 }
 
 @media screen and (max-width: 900px) {
@@ -170,7 +189,8 @@
   background-position: center;
   cursor: pointer;
   visibility: hidden;
-  opacity: 0;
+  opacity: 1;
+  /* display: block; */
 }
 
 @media screen and (max-width: 900px) {
@@ -183,6 +203,7 @@
   .movie__delete {
     margin-left: 256px;
     margin-top: 10px;
+    visibility: visible;
   }
 }
 
@@ -191,12 +212,12 @@
   transition: 1s ease-out;
 }
 
-.movie__img:hover~.movie__save {
+.movie__link:hover~.movie__save {
   visibility: visible;
   opacity: 1;
 }
 
-.movie__img:hover~.movie__delete {
+.movie__link:hover~.movie__delete {
   visibility: visible;
   opacity: 1;
 }

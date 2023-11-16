@@ -46,7 +46,7 @@
   line-height: 15.73px;
 }
 
-.register__input_password {
+.register__input_error {
   color: #EE3465;
 }
 
@@ -58,6 +58,38 @@
   margin-top: 10px;
 }
 
+.register__form-error {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.31px;
+  color: #FF004C;
+  text-align: center;
+  margin-top: 49px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.register__form-error_login {
+  margin-top: 135px;
+}
+
+@media screen and (max-width: 600px) {
+  .register__form-error_login {
+    margin-top: 223px;
+  }
+}
+
+.register__form-error_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .register__form-error {
+    margin-top: 140px;
+  }
+}
+
 .register__button {
   background-color: #4285F4;
   border-radius: 3px;
@@ -65,7 +97,7 @@
   font-weight: 500;
   line-height: 16.94px;
   border: none;
-  margin-top: 69px;
+  margin-top: 20px;
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -78,38 +110,28 @@
   .register__button {
     font-size: 12px;
     line-height: 14.52px;
-    margin-top: 156px;
+    margin-top: 15px;
   }
 }
 
 .register__button_disabled {
   background-color: #F8F8F8;
   color: #C2C2C2;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.94px;
-  border: none;
-  margin-top: 69px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 45px;
+  cursor: auto;
 }
 
 .register__button_login {
-  margin-top: 169px;
-}
-
-@media screen and (max-width:600px) {
-  .register__button_login {
-    margin-top: 256px;
-  }
+  margin-top: 20px;
 }
 
 .register__button:hover {
   opacity: 80%;
   transition: 1s ease-out;
+}
+
+.register__button_disabled:hover {
+  opacity: 100%;
+  transition: none;
 }
 
 .register__question {
