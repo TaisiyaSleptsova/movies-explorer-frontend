@@ -19,22 +19,22 @@ export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, t
 
   function handleSubmit (e) {
     e.preventDefault(); 
-    if (values.search && values.search !== " " && location.pathname === '/movies') {
+      if (values.search && location.pathname === '/movies') {
       searchMovies(values.search)
       setErrorMessage('')
       getFirstState()
-    } else if (values.search && values.search !== " " && location.pathname === '/saved-movies'){
+    } else if (values.search && location.pathname === '/saved-movies'){
       searchMovies(values.search)
-      setErrorMessage('')
+      setErrorMessage('')      
     } else {
       setErrorMessage('Нужно ввести ключевое слово')
-    }
+      }
   }
 
   return (
     <section className="search-form">
       <div className="search-form__container">
-        <form className="search-form__form" noValidate="" onSubmit={handleSubmit}>
+        <form className="search-form__form" noValidate onSubmit={handleSubmit}>
           <div className="search-form__form-container">
           <input
             className="search-form__imput"
@@ -42,13 +42,13 @@ export default function SearchForm ({ searchMovies, searchFormMovie, isFilter, t
             placeholder="Фильм"
             type="text"
             required
-            value={values.search || " "}
+            value={values.search}
             onChange={handleChange}
           />
           <button
             className="search-form__button"
             aria-label="Начать поиск по фильмам"
-            type="submit"
+            // type="submit"
           />
           </div>
           <span className="search-form__error">{errorMessage}</span>

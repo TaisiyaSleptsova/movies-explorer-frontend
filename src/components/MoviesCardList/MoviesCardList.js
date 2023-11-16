@@ -4,7 +4,7 @@ import './MoviesCardList.css'
 import { useLocation } from 'react-router-dom'
 import Preloader from '../Preloader/Preloader'
 
-export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, setIsLike, onSave, savedMovies, onFavorite, setSavedMovies, newMoviasList, errorMessage, firstEmpty, movieCards, count, handleMore }) {
+export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, setIsLike, onSave, savedMovies, onFavorite, setSavedMovies, newMoviasList, errorMessage, firstEmpty, handleMore, filterMovies }) {
 
   const location = useLocation()
 
@@ -28,8 +28,8 @@ export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, 
     <section className="movies">
       <ul className="movies__items">
         {isLoading ? <Preloader/> :
-        (location.pathname === '/movies' && movieCards.length > 0) ?
-        movieCards.map((item) => { 
+        (location.pathname === '/movies' && movies.length > 0) ?
+        movies.map((item) => { 
             return (
               <MoviesCard 
                 key={item._id} 
@@ -67,7 +67,7 @@ export default function MoviesCardList ({ isLoading, movies, saveMovie, isLike, 
           }
       </ul>
        
-      {(location.pathname === '/movies' && (movieCards.length === count) ) ? 
+      {(location.pathname === '/movies' && (movies.length < filterMovies.length) ) ? 
       <div className="movies__more">
         <button className="movies__more-films" onClick={handleMore}>Еще</button>
       </div>:

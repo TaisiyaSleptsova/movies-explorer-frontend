@@ -32,6 +32,10 @@ export default function Movies ({ savedMovies, setSavedMovies, loggedIn, handleL
   const [firstEmpty, setFistEmpty] = useState(true)
 
   const [count, setCount] = useState('')
+
+//  //стейт для отображения кнопки еще 
+//   const [more, setMore] = useState(false)
+
   const movieCards = filterMovies.slice(0, count)
 
   const location = useLocation()
@@ -168,7 +172,7 @@ export default function Movies ({ savedMovies, setSavedMovies, loggedIn, handleL
        {!isLoading ? 
         <MoviesCardList 
           isLoading={isLoading}
-          movies={filterMovies}
+          movies={movieCards}
           saveMovie={saveMovie}
           isLike={isLike}
           setIsLike={setIsLike}
@@ -177,8 +181,7 @@ export default function Movies ({ savedMovies, setSavedMovies, loggedIn, handleL
           onFavorite={onFavorite}
           errorMessage={errorMessage}
           firstEmpty={firstEmpty}
-          movieCards={movieCards}
-          count={count}
+          filterMovies={filterMovies}
           handleMore={handleMore}
         />
         : <Preloader/>
